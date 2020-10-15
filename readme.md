@@ -4,7 +4,9 @@ a plugin of fluentd transfer data to s3 ,reduce aws billing.
 
 本方案使用fluentd作为transfer tool,替换aws firehose service。可以完全节省aws firehose的service billing。
 通过了业务场景的实战，性能和服务稳定性由保障。
+
 qps在100000左右（+20%，-20%），日均传输数据量在10T，（相较于使用firehose）月均节省aws billing在7000$+。效果非常可观！
+
 缺点是可维护性不高，需要精细的监控指标；相当于自己维护了一整套数据传输的服务；此外由于配置中chunk_limit_size的限制（chunk_limit_size越大，传输的次数越少，节省的流量传输费用越多，占用的存储空间越小），随着chunk_limit_size的变大，对机器的磁盘和内存使用率变大，所以谨慎设置chunk_limit_size的大小。根据实际情况把握平衡点。
  > 推荐对数据进行压缩，fluentd支持的文件压缩比如gzip，压缩对机器性能有影响但是对于数据传输和存储都有较大的节省。按照实践结果来看，使用gzip压缩了近5倍。
 

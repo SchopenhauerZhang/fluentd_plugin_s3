@@ -11,13 +11,13 @@ qps在100000左右（+20%，-20%），日均传输数据量在10T，（相较于
 
 #### QAQ
 
-+【1】[fluentd 配置参数参考](https://docs.fluentd.org/output/s3)
-+【2】[fluentd-plugin-s3 project](https://github.com/fluent/fluent-plugin-s3)
-+【3】另外在业务场景满足的情况下，可以选择[fluent-bit](https://docs.fluentbit.io/manual/)替代fluent：
++ 【1】[fluentd 配置参数参考](https://docs.fluentd.org/output/s3)
++ 【2】[fluentd-plugin-s3 project](https://github.com/fluent/fluent-plugin-s3)
++ 【3】另外在业务场景满足的情况下，可以选择[fluent-bit](https://docs.fluentbit.io/manual/)替代fluent：
     根据在本方案的生产环境中单机测试结果来看：
         1)fluent-bit 的qps范围在4000左右；
         2)fluent的qps范围在10000左右；
     但是较于fluent，fluent-bit更为轻量级；官网也更为推荐fluent-bit，但是在实践时间段内（2019年12月-2020年5月）fluent-bit的config options支持还不够完善；
 
- +【4】[fluent-bit-go-s3 docker images](https://hub.docker.com/r/cosmo0920/fluent-bit-go-s3/dockerfile)
+ + 【4】[fluent-bit-go-s3 docker images](https://hub.docker.com/r/cosmo0920/fluent-bit-go-s3/dockerfile)
  
